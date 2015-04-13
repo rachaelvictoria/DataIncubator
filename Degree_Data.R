@@ -89,7 +89,6 @@ to_remove <- ls()
 #Reorder list by total number of STEM degrees granted, descending
 Degree_School_Table <- total[order(-total[,5]),]
 
-
 #Do a bit of cleanup
 rm(list=to_remove)
 
@@ -151,13 +150,14 @@ colnames(zips_table) <- c("zip", "county", "state")
 # All values are for number of students enrolled in grade 12                 #
 #                                                                            #        
 #                                                                            # 
-# Col 1 = Zip                                                                #
-# COl 2  = B1407I_016E -- Hispanic or Latino                                 #
-# COl 3  = B1407H_016E -- WHite Alone, Not HIspanic                          #
-# Col 4 = B14007B_016E - Black or Arfican American Alone                     #
-# COl 5 = B14007C_016E- American Indian and Alaska Native ALONE              #
-# Col 5 = B14007D_016E -- Asian ALone                                        #
-# Col 6 = B14007E_016E -- Native Hawaiian and Other Pacific IslanderAlone    #
+# Col 1 = County
+# Col 2  = State
+# COl 3  = B14007I_016E -- Hispanic or Latino                                 #
+# COl 4  = B14007H_016E -- WHite Alone, Not HIspanic                          #
+# Col 5 = B14007B_016E - Black or Arfican American Alone                     #
+# COl 6 = B14007C_016E- American Indian and Alaska Native ALONE              #
+# Col 7 = B14007D_016E -- Asian ALone                                        #
+# Col 8 = B14007E_016E -- Native Hawaiian and Other Pacific IslanderAlone    #
 #                                                                            #
 #                                                                            #
 # DATA SET - American Community Survey, 2009-2013, 5 Year Summary File       #
@@ -202,6 +202,8 @@ Race_zip$total <- rowSums(Race_zip[,3:7])
 
 #Sort table of schools by total number of STEM degrees for all races, descending
 Degree_School_Table <- Degree_School_Table[order(-Degree_School_Table[,5]),]
+write.csv(file = "./Final_Degree_University_Table.csv", x = Degree_School_Table)
+write.csv(file = "./Final_Race_zip_table.csv", x = Race_zip)
 
 
 #Select the top ten STEM bachelors granting schools in the US
