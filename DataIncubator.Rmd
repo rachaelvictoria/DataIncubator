@@ -86,3 +86,9 @@ The following data fields were selected:
 Zip code data, which allowed correlation between university zip codes and the surrounding counties was accessed directly from the US Postal Service zip code database (http://www.unitedstateszipcodes.org/zip_code_database.csv) 
 
 ###Exploratory Analysis
+For initial exploratory analysis the university degree data was limited to Bachelor's degrees and aggregated over all years and majors. The number of aggregate STEM degrees granted, in total and by race, was then calculated for each university.  Zip codes were used to determine each university's county^3^ and an identifier of id = "County, State" was created for each school. The universities were then sorted by the total number of STEM degrees granted over the 2009-2013 time period, *Final_Degree_University_Table.csv*. 
+The race demographics for 12th grades by county was aggregated over all years and the number of 12th graders, in total and by race was calculated for each county. An id = "County, State" identifier was added to allow correlation between the two tables. 
+
+The fraction of STEM degrees granted, by race, was then plotted for the ten schools which granted the largest number of STEM degrees overall.   
+![STEM Degrees by Race for Top 10 STEM Degree Granting Schools](./Top_Ten_Schools_Degree_Demo.png)  
+Using the id = "County, State" values the racial demographics for 12th graders in the county of each of the top ten schools was also plotted.
