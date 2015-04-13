@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1428955953295.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CB548206",
+    "lastKnownWriteTime" : 578055781,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "Degree_School_Table",
+        "contentUrl" : "content?title=Degree_School_Table&file=4f097cf8e54f48b994d2b3d63bd8cdc9.htm",
+        "displayedObservations" : 1000,
+        "displayedVariables" : 11,
+        "totalObservations" : 1117,
+        "variables" : 10
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

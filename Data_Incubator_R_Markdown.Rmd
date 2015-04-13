@@ -99,3 +99,4 @@ The race demographics for 12th grades by county was aggregated over all years an
 The fraction of STEM degrees granted, by race, was then plotted for the ten schools which granted the largest number of STEM degrees overall.   
 ![STEM Degrees by Race for Top 10 STEM Degree Granting Schools](./Top_Ten_Schools_Degree_Demo.png)  
 Using the id = "County, State" values the racial demographics for 12th graders in the county of each of the top ten schools was also plotted.
+![12th Grader Demographics for Each of the Top 10 STEM Degree Granting Schools County](./University County Demographics - 12th gradersA.png)
