@@ -1,0 +1,17 @@
+{
+    "contents" : "# DataIncubator\nCode and data for Data Incubator Challenge Questions 4/2015\n\n##Project Proposal\nThe \"Let Everyone Dream\" campaign, recently announced at the White House Science Fair, is a 90 million (USD) multisector intiative to expand STEM opportunites; with a special focus on underrepresented student demographics. This initiative includes^1^:\n* A 4 million (USD) commitment by Televisa, a mexican media company, for a national television campaign improving the visibility of Latinas in STEM fields.\n* A 15 million (USD) commitment by 3M coporation to STEM programs for women and underserved population\n* A 4 million (USD) commitment by the Motorola Solutions Foundation for innovative hands-on STEM programming for underserved students\n\nThe push for STEM opportunities is not limited to  increasing the number of underrepresented students who choose a STEM career path. Intel recently announced a 300 million (USD) initiative to have full representation of women and minorities in the technology workforce by 2020. ",
+    "created" : 1428941687582.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "914627235",
+    "id" : "E85895A5",
+    "lastKnownWriteTime" : 578055781,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

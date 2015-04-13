@@ -1,0 +1,16 @@
+{
+    "contents" : "myfunction <- function() {\n\tx <- rnorm(100)\n\tmean(x)\n}\n\nsecond <- function(x){\n\tx + rnorm(length(x))\n}",
+    "created" : 1428941891632.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "808582664",
+    "id" : "AFB32A37",
+    "lastKnownWriteTime" : 1417896809,
+    "path" : "~/data scientist class/R class/mycode.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
