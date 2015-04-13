@@ -89,6 +89,7 @@ to_remove <- ls()
 #Reorder list by total number of STEM degrees granted, descending
 Degree_School_Table <- total[order(-total[,5]),]
 
+
 #Do a bit of cleanup
 rm(list=to_remove)
 
@@ -150,14 +151,13 @@ colnames(zips_table) <- c("zip", "county", "state")
 # All values are for number of students enrolled in grade 12                 #
 #                                                                            #        
 #                                                                            # 
-# Col 1 = County
-# Col 2  = State
-# COl 3  = B14007I_016E -- Hispanic or Latino                                 #
-# COl 4  = B14007H_016E -- WHite Alone, Not HIspanic                          #
-# Col 5 = B14007B_016E - Black or Arfican American Alone                     #
-# COl 6 = B14007C_016E- American Indian and Alaska Native ALONE              #
-# Col 7 = B14007D_016E -- Asian ALone                                        #
-# Col 8 = B14007E_016E -- Native Hawaiian and Other Pacific IslanderAlone    #
+# Col 1 = Zip                                                                #
+# COl 2  = B1407I_016E -- Hispanic or Latino                                 #
+# COl 3  = B1407H_016E -- WHite Alone, Not HIspanic                          #
+# Col 4 = B14007B_016E - Black or Arfican American Alone                     #
+# COl 5 = B14007C_016E- American Indian and Alaska Native ALONE              #
+# Col 5 = B14007D_016E -- Asian ALone                                        #
+# Col 6 = B14007E_016E -- Native Hawaiian and Other Pacific IslanderAlone    #
 #                                                                            #
 #                                                                            #
 # DATA SET - American Community Survey, 2009-2013, 5 Year Summary File       #
@@ -202,8 +202,6 @@ Race_zip$total <- rowSums(Race_zip[,3:7])
 
 #Sort table of schools by total number of STEM degrees for all races, descending
 Degree_School_Table <- Degree_School_Table[order(-Degree_School_Table[,5]),]
-write.csv(file = "./Final_Degree_University_Table.csv", x = Degree_School_Table)
-write.csv(file = "./Final_Race_zip_table.csv", x = Race_zip)
 
 
 #Select the top ten STEM bachelors granting schools in the US
@@ -225,18 +223,30 @@ rownames(Degree_school_plot)<- names
 rownames(school_plot_12th) <- names
 xmax <- signif(max(top_ten[,5]),1)
 
-title = c("Number of STEM Bachelor's Degrees Granted, by Race, \nfor Top 10 STEM Degree Granting Schools (2009 - 2013)")
-titleB = c("Number of 12th Graders enrolled within the same county\n as Top 10 STEM Degree Granting Schools (2009-2013) ")
+title = c("Fraction of STEM Bachelor's Degree Granted, by Race, for Top 10 STEM Degree Granting Schools (2009 - 2013)")
+titleB = c("Fraction of 12th Graders enrolled within the same county as Top 10 STEM Degree Granting Schools (2009-2013) ")
 mymat <- as.matrix(Degree_school_plot)
 mymatB <- as.matrix(school_plot_12th)
 mymat_t <- t(mymat)
 mymatB_t <- t(mymatB)
-par(mar = c(5, 20, 2, 5))
-plot_colors <- c("darkblue", "gold1", "indianred3", "chartreuse", "slateblue")
-title(title, line = -20)
-legend_list <- list(x = 1.2, y = 15, bty = "n")
-barplot(mymat_t, xlim = c(0, 1), main = title, adj = 0, horiz = TRUE, names.arg = names, las = 1, col = plot_colors, legend = names(Degree_school_plot))
 
-barplot(mymatB_t, xlim = c(0, 1), main = titleB, adj = 0, horiz = TRUE, names.arg = names, las = 1, col = plot_colors, legend = names(school_plot_12th), args.legend = legend_list)
+par(mar = c(3, 16.5, 2, 7))
+par(mfrow=c(1,1))
+par(cex = 0.8)
+plot_colors <- c("darkblue", "gold1", "indianred3", "chartreuse", "slateblue")
+title(title, line = 50)
+title(titleB, line = -30)
+legend_list <- list(x = 1.1, y = 12, bty = "n")
+legend_listB <- list(x = 1.132, y = 12, bty = "n")
+jpeg(file = "Top_Ten_Schools_Degree_DemoA.jpeg")
+png("Top_Ten_Schools_Degree_Demo.png", width     = 5.25,  height    = 3.25,  units     = "in",  res       = 1200,  pointsize = 4)
+par( mar = c(3, 18.5, 3, 7),  xaxs     = "i",  yaxs     = "i",  cex.axis = 1,  cex.lab  = 1)
+barplot(mymat_t, xlim = c(0, 1), main = title, adj = 0, horiz = TRUE, names.arg = names, las = 1, col = plot_colors, legend = names(Degree_school_plot), args.legend = legend_list)
+dev.off()
+
+png("University County Demographics - 12th gradersA.png", width     = 5.25,  height    = 3.25,  units     = "in",  res       = 1200,  pointsize = 4)
+par( mar = c(3, 18.5, 3, 7),  xaxs     = "i",  yaxs     = "i",  cex.axis = 1,  cex.lab  = 1)
+barplot(mymatB_t, xlim = c(0, 1), main = titleB, adj = 0, horiz = TRUE, names.arg = names, las = 1, col = plot_colors, legend = names(school_plot_12th), args.legend = legend_listB)
+dev.off()
 
 
