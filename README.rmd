@@ -13,13 +13,13 @@ output: html_document
 Code and data for Data Incubator Challenge Questions 4/2015
 
 ##Background
-The "Let Everyone Dream" campaign, recently announced at the White House Science Fair, is a 90 million (USD) multi-sector initiative to expand STEM opportunities; with a special focus on underrepresented student demographics. This initiative includes^1^:
+The "Let Everyone Dream" campaign, recently announced at the White House Science Fair, is a 90 million (USD) multi-sector initiative to expand STEM opportunities; with a special focus on underrepresented student demographics. This initiative includes(ref 1):
 
 * A $4 million commitment by Televisa, a Mexican media company, for a national television campaign improving the visibility of Latinas in STEM fields.
 * A $15 million commitment by 3M corporation to fund STEM programs for women and underserved population.
 * A $4 million commitment by the Motorola Solutions Foundation for innovative hands-on STEM programming for underserved students.
 
-The push for STEM opportunities is not limited to  increasing the number of underrepresented students who choose a STEM career path. Intel recently announced a $300 million initiative^2^ to have full representation of women and minorities in the technology workforce by 2020. This funding will be used to:
+The push for STEM opportunities is not limited to  increasing the number of underrepresented students who choose a STEM career path. Intel recently announced a $300 million initiative (ref 2) to have full representation of women and minorities in the technology workforce by 2020. This funding will be used to:
 * Fund programs to teach STEM to young people in underserved areas.
 * Collaborate with higher education institutions.
 * Invest in women and minority-owned companies.
@@ -93,7 +93,7 @@ The following data fields were selected:
 Zip code data, which allowed correlation between university zip codes and the surrounding counties was accessed directly from the US Postal Service zip code database (http://www.unitedstateszipcodes.org/zip_code_database.csv) 
 ##Exploratory Analysis
 ###Methods
-For initial exploratory analysis the university degree data was limited to Bachelor's degrees and aggregated over all years and majors. The number of aggregate STEM degrees granted, in total and by race, was then calculated for each university.  Zip codes were used to determine each university's county^3^ and an identifier of id = "County, State" was created for each school. The universities were then sorted by the total number of STEM degrees granted over the 2009-2013 time period, *Final_Degree_University_Table.csv*. 
+For initial exploratory analysis the university degree data was limited to Bachelor's degrees and aggregated over all years and majors. The number of aggregate STEM degrees granted, in total and by race, was then calculated for each university.  Zip codes were used to determine each university's county and an identifier of id = "County, State" was created for each school. The universities were then sorted by the total number of STEM degrees granted over the 2009-2013 time period, *Final_Degree_University_Table.csv*. 
 The race demographics for 12th grades by county was aggregated over all years and the number of 12th graders, in total and by race was calculated for each county. An id = "County, State" identifier was added to allow correlation between the two tables. 
 ###Results
 The fraction of STEM degrees granted, by race, was then plotted for the ten schools which granted the largest number of STEM degrees overall.   
@@ -102,3 +102,7 @@ Using the id = "County, State" values the racial demographics for 12th graders i
 ![Demographics of 12th Graders in Top 10 Schools Counties](./University County Demographics - 12th gradersA.png) 
 ###Discussion and Possible Further Work
 These intial exploratory plots show large disparities between the demographics of the top then STEM degree granting universities and the population of 12th graders living in the same county. If the University of Florida's STEM Undergraduate demographics matched that of their surrounding county roughly 40% of the STEM student body would be be African American. The data sets plotted do not consider gender but this paramter is avaialble in the raw data collected. Looking at demographic breakdowns by major, rather than aggregated STEM fields, over all universities and including a breakdown by gender could offer high level insight into the STEM focus many of the newly announced STEM initiatives could explore. 
+
+
+ref 1: https://www.whitehouse.gov/the-press-office/2015/03/23/fact-sheet-president-obama-announces-over-240-million-new-stem-commitmen  
+ref 2: http://fortune.com/2015/01/12/intel-diversity/
